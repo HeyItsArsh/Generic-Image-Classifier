@@ -4,19 +4,16 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
 
 jobs:
-
   test:
     name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v4
 
@@ -41,7 +38,10 @@ jobs:
       - name: Create Application Package
         run: |
           mkdir build
-          cp app.py build/
+          cp Main.py build/
+          cp Model.py build/
+          cp Predict.py build/
+          cp classes.txt build/
           cp requirements.txt build/
           cp README.md build/
 
