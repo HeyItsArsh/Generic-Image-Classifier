@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101311">
+  <title>Index — Image Desk</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="rail" aria-label="Workspace">
+      <a class="brand" href="/" aria-label="Index home"><span class="brand-mark"><i></i><i></i><i></i><i></i></span><span>INDEX</span></a>
+      <div class="rail-label">WORKSPACE</div>
+      <div class="rail-current"><span class="rail-icon">◉</span><span>Image desk</span><span class="rail-active"></span></div>
+      <div class="rail-bottom"><div class="rail-line"></div><span class="rail-small">LOCAL<br>INSTANCE</span><span class="rail-version">01 / 01</span></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span>WORKSPACE</span><b>/</b><strong>IMAGE DESK</strong></div>
+        <div class="system-state"><span class="state-dot" id="stateDot"></span><span id="stateText">CONNECTING</span><span class="state-divider"></span><span id="categoryTotal">— CATEGORIES</span></div>
+      </header>
+      <section class="intro-row">
+        <div><p class="eyebrow"><span class="eyebrow-mark">01</span> CLASSIFIER / RETAINED MEMORY</p><h1>Look closer<span class="title-period">.</span></h1></div>
+        <p class="intro-copy">A working image desk for a model that learns in layers.<br>Choose a picture to see what it recognizes.</p>
+      </section>
+      <section class="desk-grid" aria-label="Image classification desk">
+        <div class="input-panel">
+          <div class="panel-top"><span class="panel-index">A—01</span><span class="panel-title">IMAGE INPUT</span><span class="panel-rule"></span><span class="format-label">JPG · PNG · WEBP</span></div>
+          <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp,image/bmp,image/gif" hidden>
+          <label class="drop-area" id="dropArea" for="imageInput" tabindex="0">
+            <div class="drop-empty" id="dropEmpty"><div class="target-icon"><span></span></div><p class="drop-heading">Place an image<br><em>in the frame.</em></p><span class="drop-hint">DROP FILE OR <b>CHOOSE FROM DEVICE</b></span><span class="drop-limit">ONE IMAGE · MAX 8 MB</span></div>
+            <img id="imagePreview" class="image-preview" alt="Selected image preview" hidden>
+            <div id="previewOverlay" class="preview-overlay" hidden><span id="previewName"></span><button id="removeImage" type="button" aria-label="Remove selected image">×</button></div>
+          </label>
+          <div class="input-bottom"><span id="fileStatus">NO IMAGE SELECTED</span><button id="classifyButton" class="action-button" type="button" disabled><span>Read image</span><span class="button-arrow">↗</span></button></div>
+          <p class="privacy-line"><span>↳</span> Images are processed for this reading and are not added to memory.</p>
+        </div>
+        <section class="output-panel" aria-label="Classification result">
+          <div class="panel-top"><span class="panel-index">B—01</span><span class="panel-title">MODEL READING</span><span class="panel-rule"></span><span class="output-stamp">LIVE</span></div>
+          <div class="output-body">
+            <div class="empty-result" id="emptyResult"><div class="orbit-mark"><span></span><i></i></div><p class="result-overline">AWAITING INPUT</p><h2>The next read<br>starts here.</h2><p class="result-note">Your strongest match and nearby possibilities will appear in this space.</p><div class="result-footer"><span>MODEL OUTPUT</span><span>— —</span></div></div>
+            <div class="loading-result" id="loadingResult" hidden><div class="loader-bars"><i></i><i></i><i></i><i></i><i></i></div><p>Reading image<span>…</span></p><span>THIS MAY TAKE A MOMENT</span></div>
+            <div class="prediction-result" id="predictionResult" hidden><div class="result-overline">STRONGEST MATCH <span class="match-star">✳</span></div><h2 id="predictionLabel">—</h2><div class="confidence-head"><span>MODEL CONFIDENCE</span><strong id="confidenceValue">—</strong></div><div class="confidence-bar"><span id="confidenceBar"></span></div><div class="alternatives-head"><span>NEARBY POSSIBILITIES</span><span>SCORE</span></div><ol id="matchList" class="match-list"></ol><div class="result-footer"><span>ONE IMAGE · ONE READ</span><span id="readNumber">READ 01</span></div></div>
+          </div>
+          <p class="confidence-caption">Confidence is the model’s relative score, not a guarantee.</p>
+        </section>
+      </section>
+      <section class="lower-grid">
+        <div class="category-panel"><div class="lower-heading"><span class="lower-index">C—01</span><h2>Learned categories</h2><span class="category-count" id="categoryCount">0</span></div><div class="category-list" id="categoryList"><span class="category-placeholder">Loading categories…</span></div></div>
+        <div class="history-panel"><div class="lower-heading"><span class="lower-index">D—01</span><h2>Recent reads</h2><button id="clearHistory" class="text-button" type="button" hidden>Clear</button></div><div id="historyList" class="history-list"><p class="history-empty">Recent reads stay only in this browser session.</p></div></div>
+      </section>
+      <footer class="footer"><span>INDEX <i>—</i> IMAGE DESK</span><span>BUILT TO REMEMBER. MADE TO LOOK AGAIN.</span><span>LOCAL MODEL / V1</span></footer>
+    </main>
+  </div>
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+</body>
+</html>

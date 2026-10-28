@@ -25,11 +25,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
 
       - name: Check Python Syntax
         run: |
-          python -m compileall .
+          python -m compileall app.py Main.py Predict.py Evaluate.py upgrade tests
 
       - name: Run Tests
         run: |
@@ -39,10 +39,13 @@ jobs:
         run: |
           mkdir build
           cp Main.py build/
-          cp Model.py build/
           cp Predict.py build/
-          cp classes.txt build/
-          cp requirements.txt build/
+          cp classes.json image_classifier.keras app.py Evaluate.py build/
+          cp "Start UI.bat" build/
+          cp -r static build/
+          mkdir build/upgrade
+          cp upgrade/train_upgrade.py upgrade/install_upgrade.py build/upgrade/
+          cp requirements.txt requirements-dev.txt MODEL_CARD.md build/
           cp README.md build/
 
       - name: Upload Build Artifact

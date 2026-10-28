@@ -1,0 +1,45 @@
+{
+  "source_files": 37030,
+  "exact_duplicates": 1996,
+  "conflicting_hashes": 3,
+  "source_test_overlap": 1547,
+  "corrupt": [],
+  "counts": {
+    "train": {
+      "Apple": 900,
+      "Banana": 900,
+      "Grape": 900,
+      "Mango": 900,
+      "Strawberry": 900,
+      "cats": 1500,
+      "dogs": 1500
+    },
+    "validation": {
+      "Apple": 100,
+      "Banana": 100,
+      "Grape": 100,
+      "Mango": 100,
+      "Strawberry": 100,
+      "cats": 100,
+      "dogs": 100
+    },
+    "holdout": {
+      "Apple": 150,
+      "Banana": 150,
+      "Grape": 150,
+      "Mango": 150,
+      "Strawberry": 150,
+      "cats": 150,
+      "dogs": 150
+    },
+    "existing_test": {
+      "Apple": 200,
+      "Banana": 200,
+      "cats": 398,
+      "dogs": 399,
+      "Grape": 200,
+      "Mango": 200,
+      "Strawberry": 200
+    }
+  }
+}

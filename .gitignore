@@ -1,5 +1,45 @@
+# Local Python environments and generated files
 venv/
+.venv/
 __pycache__/
+*.py[cod]
+.pytest_cache/
 .ipynb_checkpoints/
-dataset/
-dataset_OG/
+
+# Image collections are local; provide your own labeled datasets
+/dataset/
+/dataset_OG/
+/dataset_fruit/
+/combined_dataset/
+/test_dataset/
+/test_dataset_Combined/
+/replay_dataset/
+/fresh_classifier/
+/notebooks/
+
+# Runtime keys, logs, caches, and backup artifacts
+/.runtime_temp/
+/.image-desk-session.json
+/backups/
+/build/
+*.log
+/upgrade/temp/
+/upgrade/tmp*/
+/upgrade/keras_cache/
+/upgrade/*_features.npz
+/upgrade/*_features.sha256
+/upgrade/image_classifier.keras
+/upgrade/classes.json
+/upgrade/split_manifest.json
+/upgrade/ANALYSIS.md
+
+# Local sample uploads
+/test.jpeg
+/test.jpg
+/test.webp
+/test1.jpeg
+
+# Local credentials
+.env
+.env.*
+!.env.example

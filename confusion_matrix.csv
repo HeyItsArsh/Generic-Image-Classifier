@@ -1,0 +1,8 @@
+actual \ predicted,Apple,Banana,Grape,Mango,Strawberry,cats,dogs
+Apple,158,4,9,21,8,0,0
+Banana,4,182,6,7,0,1,0
+Grape,15,5,166,5,9,0,0
+Mango,17,9,6,167,1,0,0
+Strawberry,8,0,6,2,184,0,0
+cats,3,8,2,0,0,377,8
+dogs,3,12,3,2,0,3,376
